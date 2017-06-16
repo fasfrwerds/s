@@ -1,0 +1,125 @@
+$(document).on('click', '.next', function(e) {
+  e.preventDefault();
+  $(this).parent().parent().hide().next().fadeIn();
+  $('.carousel').carousel('next');
+}
+               );
+$(document).on('click', '.run_loading', function(e) {
+  e.preventDefault();
+  $('.up').slideUp('fast');
+  $(this).parent().parent().hide().next().fadeIn();
+  $('.step4 .loading').show();
+  $('.carousel').carousel('next');
+  $('.carousel').carousel('pause');
+  loading_run_1('700');
+  loading_run_2('1400');
+  loading_run_3('2100');
+  loading_run_4('2800');
+  loading_run_5('4000');
+}
+               );
+function loading_run_1(time_delay) {
+  window.setTimeout(loading_1, time_delay);
+}
+function loading_1() {
+  $('.run_header_1').hide();
+  $('.run_header_2, .run_body_1').fadeIn();
+  $('.progress-bar').css('width', '20%');
+}
+function loading_run_2(time_delay) {
+  window.setTimeout(loading_2, time_delay);
+}
+function loading_2() {
+  $('.run_header_2').hide();
+  $('.run_header_3, .run_body_2').fadeIn();
+  $('.progress-bar').css('width', '40%');
+}
+function loading_run_3(time_delay) {
+  window.setTimeout(loading_3, time_delay);
+}
+function loading_3() {
+  $('.run_header_3').hide();
+  $('.run_header_4, .run_body_3').fadeIn();
+  $('.progress-bar').css('width', '60%');
+}
+function loading_run_4(time_delay) {
+  window.setTimeout(loading_4, time_delay);
+}
+function loading_4() {
+  $('.run_header_4').hide();
+  $('.run_header_5, .run_body_4').fadeIn();
+  $('.progress-run').css('width', '80%');
+}
+function loading_run_5(time_delay) {
+  window.setTimeout(loading_5, time_delay);
+}
+function loading_5() {
+  $('.show_end').show();
+  $('.progress-run').css('width', '100%');
+  window.scrollBy(0, document.body.scrollHeight);
+}
+var javascript_countdown;
+$(document).ready(function() {
+  javascript_countdown = function() {
+    var time_left = 10;
+    var minutesT, secondsT;
+    var keep_counting = 1;
+    var no_time_left_message = 'einige Sekunden';
+    var js_selector = $('.js_timer');
+    function countdown() {
+      if (time_left < 2) {
+        keep_counting = 0;
+      }
+      time_left = time_left - 1;
+    }
+    function add_leading_zero(n) {
+      if (n.toString().length < 2) {
+        return '0' + n;
+      }
+      else {
+        return n;
+      }
+    }
+    function format_output() {
+      var hours, minutes, seconds;
+      seconds = time_left % 60;
+      minutes = Math.floor(time_left / 60) % 60;
+      hours = Math.floor(time_left / 3600);
+      seconds = add_leading_zero(seconds);
+      minutes = add_leading_zero(minutes);
+      hours = add_leading_zero(hours);
+      return minutes + ' ' + minutesT + ' ' + seconds + ' ' + secondsT;
+    }
+    function show_time_left() {
+      js_selector.html(format_output());
+    }
+    function no_time_left() {
+      js_selector.html(no_time_left_message);
+    }
+    return {
+    count: function() {
+      countdown();
+      show_time_left();
+    }
+     ,        timer: function() {
+       javascript_countdown.count();
+       if (keep_counting) {
+         setTimeout("javascript_countdown.timer();", 1000);
+       }
+       else {
+         no_time_left();
+       }
+     }
+     ,        init: function(n, m, s) {
+       time_left = n;
+       minutesT = m;
+       secondsT = s;
+       javascript_countdown.timer();
+     }
+    };
+  }
+  ();
+  javascript_countdown.init(290, "Minuten", "Sekunden");
+}
+                  )
+
