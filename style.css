@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+body, html {
+	margin:15px 0;
+	padding:0px;
+	font-family:Tahoma;
+	font-size:16px;
+	background: #ffe500;
+	color:#000;
+}
+
+img {
+	padding:0;
+	border:0;
+}
+
+.clear {
+	clear: both;
+}
+
+.wrapper {
+	max-width: 980px;
+	margin: 0 auto;
+	min-width: 320px
+}
+
+h1 {
+	font-size: 28px;
+	margin: 0 0 20px 0;
+	line-height: 28px;
+	text-align: center;
+}
+
+.girl {
+	width: 48%;	float: left;	margin-right: 2%;}
+.girl h1{display:none}
+.girl img {box-shadow: 0 0 1rem #000; width: 100%;max-width: 404px;}
+
+.content_fake {
+	width: 50%;
+	float: left;
+}
+
+.title {
+	font-size: 38px;
+	font-weight: bold;
+	color: #bf0000;
+}
+
+.title-small {
+	font-size: 20px;
+	font-weight: bold;
+	color: #bf0000;
+}
+
+.frage {
+	font-size: 28px;
+}
+
+.yes, .no, .register {
+	padding:10px;
+	font-size: 24px;
+	max-width: 200px;
+	border:0;
+	margin-bottom: 2%;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-right: 2%;
+	width:47%
+}
+
+.yes { background: #51b238; }
+.no { background: #d22f2f; }
+
+.yes:hover, .no:hover  { box-shadow: 0 0 10px #000; }
+
+.register {
+	background: #fdd647; /* Old browsers */
+	background: -moz-linear-gradient(top,  #009200 0%, #34be00 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#009200), color-stop(100%,#34be00)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #009200 0%,#34be00 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #009200 0%,#34be00 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #009200 0%,#34be00 100%); /* IE10+ */
+	background: linear-gradient(top,  #009200 0%,#34be00 100%); /* W3C */	
+	color: #fff;
+	width: 250px;
+}
+
+.loading {
+	margin-bottom: 20px;
+}
+
+.load1, .load2, .load3, .load4, .result { display: none; margin-bottom: 10px; }
+
+@media all and (max-width: 600px){
+body, html {
+	margin:0;
+	font-size:12px;
+	}
+.content_fake {
+	width: 90%;
+	float: none;
+	margin:0 5%
+}
+.girl{margin-bottom:12px}
+  .girl, .content{width:100%; text-align:center}
+  .girl h1{display:block}
+  .girl img {
+width: 70%;
+}
+  .content_fake h1{display:none}
+  .title {
+	font-size: 28px;
+	font-weight: bold;
+	color: #bf0000;
+}
+
+.title-small {
+	font-size: 16px;
+	font-weight: bold;
+	color: #bf0000;
+}
+
+.frage {
+	font-size: 20px;
+}
+  h1 {
+	font-size: 16px;
+	margin: 0 0 8px 0;
+	line-height: 20px;
+	text-align: center;
+}
+  
+}

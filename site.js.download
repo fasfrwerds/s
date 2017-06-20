@@ -1,0 +1,39 @@
+var J = jQuery.noConflict();
+
+J(document).ready(function() {
+	J('.frage2, .frage3, .ergbniss').hide();
+	
+	J('.frage1 .yes, .frage1 .no').click(function() {
+		J('.frage1').hide();
+		J('.frage2').fadeIn('slow');		
+	});
+	
+	J('.frage2 .yes, .frage2 .no').click(function() {
+		J('.frage2').hide();
+		J('.frage3').fadeIn('slow');		
+	});
+	
+	J('.frage3 .yes, .frage3 .no').click(function() {
+		J('.frage3').hide();
+		J('.starttext').fadeOut('slow');
+		J('.ergbniss').fadeIn('slow', function() {
+			
+			setTimeout( "J('.ergbniss .title').html('Passende Partner werden gesucht');",2000 );
+			setTimeout( "J('.load1').fadeIn('slow');",3000 );
+			
+			setTimeout( "J('.ergbniss .title').html('Doppelte Anmeldungen werden gepr&uuml;ft');",3500 );
+			setTimeout( "J('.load2').fadeIn('slow');",4500 );
+			
+			setTimeout( "J('.ergbniss .title').html('Gratis Anmeldungen werden &uuml;berpr&uuml;ft');",5000 );
+			setTimeout( "J('.load3').fadeIn('slow');",6000 );
+			
+			setTimeout( "J('.ergbniss .title').html('***Du passt zu unserer Webseite!***');",6500 );
+			setTimeout( "J('.load4').fadeIn('slow');", 7500 );
+			setTimeout( "J('.result').fadeIn('slow'); J('.loading').hide();", 7500 );
+			
+			
+		});	
+	
+	});
+			
+});
